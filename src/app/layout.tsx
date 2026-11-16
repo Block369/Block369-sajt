@@ -40,7 +40,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="sr"
       className={`${poppins.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      {/* suppressHydrationWarning: ekstenzije (npr. Grammarly) dodaju atribute na body */}
+      <body className="flex min-h-full flex-col font-sans" suppressHydrationWarning>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
