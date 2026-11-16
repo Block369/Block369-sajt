@@ -26,7 +26,7 @@ export default function AboutPage() {
           <p className="text-sm font-semibold uppercase tracking-widest text-brand">
             Osnivač
           </p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight">{founder.name}</h2>
+          <h2 className="mt-2 text-3xl tracking-tight">{founder.name}</h2>
           <p className="text-brand">{founder.role}</p>
           <div className="mt-4 space-y-4 text-foreground/80">
             {founder.longBio.map((p, i) => (
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
       {team.length > 0 && (
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold tracking-tight">Tim</h2>
+          <h2 className="text-2xl tracking-tight">Tim</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m) => (
               <TeamCard key={m.name} member={m} />

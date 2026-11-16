@@ -25,7 +25,7 @@ export function PostList({ posts }: { posts: Post[] }) {
                 </span>
               )}
             </div>
-            <h2 className="mt-2 text-xl font-semibold tracking-tight">
+            <h2 className="mt-2 text-xl tracking-tight">
               <Link href={`/blog/${post.slug}`} className="hover:text-brand">
                 {post.title}
               </Link>
@@ -59,7 +59,7 @@ export function TermLinks({
               aria-current={active ? "page" : undefined}
               className={`inline-block rounded-full border px-3 py-1 text-sm transition-colors ${
                 active
-                  ? "border-brand bg-brand text-brand-foreground"
+                  ? "border-transparent bg-brand-gradient text-white"
                   : "border-foreground/15 text-foreground/70 hover:border-brand hover:text-brand"
               }`}
             >

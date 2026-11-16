@@ -9,11 +9,13 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { email, phone, linkedin, location } = site.contact;
+  const { email, phone, linkedin, x, telegram, location } = site.contact;
   const items = [
     email && { label: "Email", value: email, href: `mailto:${email}` },
     phone && { label: "Telefon", value: phone, href: `tel:${phone.replace(/\s/g, "")}` },
     linkedin && { label: "LinkedIn", value: "Profil na LinkedIn-u", href: linkedin },
+    x && { label: "X (Twitter)", value: "Profil na X-u", href: x },
+    telegram && { label: "Telegram", value: "Pišite nam na Telegramu", href: telegram },
     location && { label: "Lokacija", value: location },
   ].filter(Boolean) as { label: string; value: string; href?: string }[];
 
@@ -26,7 +28,7 @@ export default function ContactPage() {
 
       <div className="grid gap-8 pb-16 md:grid-cols-2">
         <section className="rounded-xl bg-muted p-8">
-          <h2 className="text-xl font-semibold tracking-tight">Zakažite konsultacije</h2>
+          <h2 className="text-xl tracking-tight">Zakažite konsultacije</h2>
           <p className="mt-2 text-foreground/70">
             Izaberite termin koji vam odgovara. Potvrda stiže na email.
           </p>
@@ -41,7 +43,7 @@ export default function ContactPage() {
         </section>
 
         <section className="p-2 md:p-8">
-          <h2 className="text-xl font-semibold tracking-tight">Direktan kontakt</h2>
+          <h2 className="text-xl tracking-tight">Direktan kontakt</h2>
           {items.length > 0 ? (
             <dl className="mt-4 space-y-4">
               {items.map((item) => (

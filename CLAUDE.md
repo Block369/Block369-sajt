@@ -31,7 +31,7 @@ No test framework is set up.
 - `src/content/site.ts` — company data: tagline, description, domain (`url`), Calendly link, contact, about text, founder, team, services. Placeholders are in `[brackets]` / marked `TODO`.
 - `src/content/blog/<slug>.mdx` — blog posts. Each exports `metadata` (`title`, `description`, `date` "YYYY-MM-DD", `category`, `tags`, optional `draft`). Drafts show only in `next dev`. See `src/content/blog/README.md`.
 - `src/lib/posts.ts` — reads posts (sync `readdirSync` + dynamic `import()` inside `'use cache'`), validates metadata, `slugify` handles Serbian letters.
-- Brand colors are CSS tokens in `src/app/globals.css` (`--brand`, `--brand-foreground`); OG image color is in `src/lib/og.tsx`.
+- Brand (from the Block369 brandbook): black `#1C1C1C`, blue `#2D46B9`, pink `#F037A5`, blue→pink gradient; headings Poppins (H1 700, H2+ 600), body DM Sans 400; logo font "Lighters" (not on Google Fonts). Tokens and utilities (`bg-brand-gradient`, `text-brand-gradient`, `frame-gradient`) live in `src/app/globals.css`; `text-brand` is blue in light mode, pink in dark mode. The logo is a temporary code approximation in `src/components/logo.tsx` until a real SVG arrives. OG images: `src/lib/og.tsx`; favicon: `src/app/icon.svg`.
 
 ## Cache Components gotchas (already hit here)
 

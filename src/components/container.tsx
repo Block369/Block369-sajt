@@ -21,7 +21,7 @@ export function PageHeader({
 }) {
   return (
     <header className="py-12 sm:py-16">
-      <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h1 className="text-3xl font-bold tracking-tight break-words sm:text-4xl">
         {title}
       </h1>
       {intro && (

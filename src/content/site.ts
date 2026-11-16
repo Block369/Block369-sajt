@@ -27,7 +27,14 @@ export type SiteConfig = {
   description: string;
   url: string;
   calendlyUrl: string;
-  contact: { email: string; phone: string; linkedin: string; location: string };
+  contact: {
+    email: string;
+    phone: string;
+    linkedin: string;
+    x: string;
+    telegram: string;
+    location: string;
+  };
   about: string[];
 };
 
@@ -45,6 +52,8 @@ export const site: SiteConfig = {
     email: "", // TODO
     phone: "", // TODO
     linkedin: "", // TODO
+    x: "", // TODO: X (Twitter) profil, pun link
+    telegram: "", // TODO: npr. "https://t.me/block369"
     location: "", // TODO, npr. "Beograd, Srbija"
   },
   // TODO: priča o firmi (svaki string je jedan pasus)

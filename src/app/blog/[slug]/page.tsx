@@ -62,7 +62,7 @@ async function Article({ params }: Pick<PageProps<"/blog/[slug]">, "params">) {
               {post.category}
             </Link>
           </div>
-          <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
             {post.title}
           </h1>
           <p className="mt-4 text-lg text-foreground/70">{post.description}</p>

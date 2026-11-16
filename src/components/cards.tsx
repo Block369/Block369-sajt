@@ -4,7 +4,7 @@ import type { Service, TeamMember } from "@/content/site";
 export function ServiceCard({ service }: { service: Service }) {
   return (
     <article className="flex flex-col rounded-xl border border-foreground/10 p-6">
-      <h3 className="text-lg font-semibold tracking-tight">{service.title}</h3>
+      <h3 className="text-lg tracking-tight">{service.title}</h3>
       <p className="mt-2 text-foreground/70">{service.description}</p>
       {service.points && service.points.length > 0 && (
         <ul className="mt-4 space-y-1 text-sm text-foreground/70">
@@ -66,7 +66,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
   return (
     <article className="flex flex-col items-center rounded-xl border border-foreground/10 p-6 text-center">
       <Avatar member={member} size={96} />
-      <h3 className="mt-4 font-semibold">{member.name}</h3>
+      <h3 className="mt-4 ">{member.name}</h3>
       <p className="text-sm text-brand">{member.role}</p>
       <p className="mt-3 text-sm text-foreground/70">{member.bio}</p>
       {member.linkedin && (

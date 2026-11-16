@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/content/site";
 import { navItems } from "@/components/nav-items";
 import { Container } from "@/components/container";
+import { Logo } from "@/components/logo";
 
 async function CopyrightYear() {
   "use cache";
@@ -9,12 +10,18 @@ async function CopyrightYear() {
 }
 
 export function Footer() {
-  const { email, phone, linkedin } = site.contact;
+  const { email, phone, linkedin, x, telegram } = site.contact;
+  const social = [
+    { label: "LinkedIn", href: linkedin },
+    { label: "X", href: x },
+    { label: "Telegram", href: telegram },
+  ].filter((s) => s.href);
   return (
-    <footer className="mt-auto border-t border-foreground/10 py-10 text-sm text-foreground/60">
+    <footer className="mt-auto border-t border-foreground/10 pb-10 text-sm text-foreground/60">
+      <div aria-hidden className="bg-brand-gradient mb-10 h-1 w-full" />
       <Container className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="font-semibold text-foreground">{site.name}</p>
+          <Logo className="text-lg" />
           <p className="mt-1">Poslovni konsalting</p>
         </div>
         <nav aria-label="Navigacija u podnožju">
@@ -44,11 +51,11 @@ export function Footer() {
               {phone}
             </a>
           )}
-          {linkedin && (
-            <a href={linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
-              LinkedIn
+          {social.map((s) => (
+            <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
+              {s.label}
             </a>
-          )}
+          ))}
         </div>
       </Container>
       <Container className="mt-8">

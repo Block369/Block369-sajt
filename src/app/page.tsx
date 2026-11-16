@@ -3,6 +3,7 @@ import { Container } from "@/components/container";
 import { CalendlyButton, CtaSection } from "@/components/cta-calendly";
 import { Avatar, ServiceCard } from "@/components/cards";
 import { PostList } from "@/components/post-list";
+import { SquareFrames } from "@/components/logo";
 import { founder, services, site } from "@/content/site";
 import { getPosts } from "@/lib/posts";
 
@@ -12,11 +13,12 @@ export default async function Home() {
 
   return (
     <Container>
-      <section className="py-20 sm:py-28">
-        <p className="text-sm font-semibold uppercase tracking-widest text-brand">
+      <section className="relative py-20 sm:py-28">
+        <SquareFrames className="absolute inset-y-16 right-0 hidden w-80 lg:block" />
+        <p className="text-brand-gradient inline-block text-sm font-semibold uppercase tracking-widest">
           Poslovni konsalting
         </p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
+        <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight text-balance break-words sm:text-6xl">
           {site.tagline}
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-foreground/70">
@@ -36,7 +38,7 @@ export default async function Home() {
       {featured.length > 0 && (
         <section className="py-12">
           <div className="flex items-end justify-between gap-4">
-            <h2 className="text-2xl font-semibold tracking-tight">Usluge</h2>
+            <h2 className="text-2xl tracking-tight">Usluge</h2>
             <Link href="/usluge" className="text-sm font-medium text-brand hover:underline">
               Sve usluge →
             </Link>
@@ -53,7 +55,7 @@ export default async function Home() {
         <div className="flex flex-col gap-6 rounded-xl border border-foreground/10 p-6 sm:flex-row sm:items-center sm:p-8">
           <Avatar member={founder} size={112} />
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight">{founder.name}</h2>
+            <h2 className="text-2xl tracking-tight">{founder.name}</h2>
             <p className="text-brand">{founder.role}</p>
             <p className="mt-3 text-foreground/70">{founder.bio}</p>
             <Link href="/o-nama" className="mt-3 inline-block text-sm font-medium text-brand hover:underline">
@@ -65,7 +67,7 @@ export default async function Home() {
 
       <section className="py-12">
         <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-semibold tracking-tight">Sa bloga</h2>
+          <h2 className="text-2xl tracking-tight">Sa bloga</h2>
           <Link href="/blog" className="text-sm font-medium text-brand hover:underline">
             Svi tekstovi →
           </Link>
