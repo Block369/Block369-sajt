@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
@@ -14,4 +15,11 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  options: {
+    // Turbopack traži plugine kao stringove (opcije moraju biti serijalizabilne).
+    remarkPlugins: ["remark-gfm"],
+  },
+});
+
+export default withMDX(nextConfig);
